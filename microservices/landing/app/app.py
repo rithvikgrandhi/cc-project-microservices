@@ -28,15 +28,6 @@ def lcm(n1, n2):
 def exp(n1, n2):
     return requests.request('GET', f'http://exp-service:5050/{n1}/{n2}').json()['result']
 
-def equal(n1, n2):
-    return requests.request('GET', f'http://eq-service:5050/{n1}/{n2}').json()['result']
-
-def greater_than(n1, n2):
-    return requests.request('GET', f'http://gt-service:5050/{n1}/{n2}').json()['result']
-
-def less_than(n1, n2):
-    return requests.request('GET', f'http://lt-service:5050/{n1}/{n2}').json()['result']
-
 def modulus(n1, n2):
     return requests.request('GET', f'http://mod-service:5050/{n1}/{n2}').json()['result']
 
@@ -63,12 +54,6 @@ def index():
             result = lcm(number_1, number_2)
         elif operation == 'exp':
             result = exp(number_1, number_2)
-        elif operation == 'equal':
-            result = equal(number_1, number_2)
-        elif operation == 'greater_than':
-            result = greater_than(number_1, number_2)
-        elif operation == 'less_than':
-            result = less_than(number_1, number_2)
         elif operation == 'modulus':
             result = modulus(number_1, number_2)
 
