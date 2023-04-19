@@ -83,7 +83,7 @@ services:
           - exp-service
         
   
-  exp-service:
+  modulus-service:
     build: ./modulus  # path is relative to docker-compose.yml location
     hostname: modulus-service
     ports:
@@ -93,7 +93,7 @@ services:
         aliases:
           - modulus-service
       
-  exp-service:
+  max-service:
     build: ./max  # path is relative to docker-compose.yml location
     hostname: max-service
     ports:
@@ -103,7 +103,7 @@ services:
         aliases:
           - max-service
 
-  exp-service:
+  min-service:
     build: ./min  # path is relative to docker-compose.yml location
     hostname: min-service
     ports:
