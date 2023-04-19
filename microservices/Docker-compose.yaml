@@ -1,96 +1,117 @@
-version: '3.3' 
+version: '3.3'  # version of compose format
 
 services:
   landing-service:
-    build: ./landing  
+    build: ./landing  # path is relative to docker-compose.yml location
     hostname: landing-service
     ports:
-      - 5050:5050  
+      - 5050:5050  # host:container
     networks:
       sample:
         aliases:
           - landing-service
 
+  # Add more services below
   add-service:
-    build: ./add  
+    build: ./add  # path is relative to docker-compose.yml location
     hostname: add-service
     ports:
-      - 3001:5050  
+      - 3001:5050  # host:container
     networks:
       sample:
         aliases:
           - add-service
   
   sub-service:
-    build: ./sub  
+    build: ./sub  # path is relative to docker-compose.yml location
     hostname: sub-service
     ports:
-      - 3002:5050  
+      - 3002:5050  # host:container
     networks:
       sample:
         aliases:
           - sub-service
 
   mult-service:
-    build: ./mult  
+    build: ./mult  # path is relative to docker-compose.yml location
     hostname: mult-service
     ports:
-      - 3003:5050  
+      - 3003:5050  # host:container
     networks:
       sample:
         aliases:
           - mult-service
 
   div-service:
-    build: ./div  
+    build: ./div  # path is relative to docker-compose.yml location
     hostname: div-service
     ports:
-      - 3004:5050  
+      - 3004:5050  # host:container
     networks:
       sample:
         aliases:
           - div-service
 
   gcd-service:
-    build: ./gcd  
+    build: ./gcd  # path is relative to docker-compose.yml location
     hostname: gcd-service
     ports:
-      - 3005:5050  
+      - 3005:5050  # host:container
     networks:
       sample:
         aliases:
           - gcd-service
   
   lcm-service:
-    build: ./lcm  
+    build: ./lcm  # path is relative to docker-compose.yml location
     hostname: lcm-service
     ports:
-      - 3006:5050  
+      - 3006:5050  # host:container
     networks:
       sample:
         aliases:
           - lcm-service
   
   exp-service:
-    build: ./exp  
+    build: ./exp  # path is relative to docker-compose.yml location
     hostname: exp-service
     ports:
-      - 3007:5050  
+      - 3007:5050  # host:container
     networks:
       sample:
         aliases:
           - exp-service
-
-
-  modulus-service:
-    build: ./modulus  
+        
+  
+  exp-service:
+    build: ./modulus  # path is relative to docker-compose.yml location
     hostname: modulus-service
     ports:
-      - 3008:5050  
+      - 3008:5050  # host:container
     networks:
       sample:
         aliases:
           - modulus-service
+      
+  exp-service:
+    build: ./max  # path is relative to docker-compose.yml location
+    hostname: max-service
+    ports:
+      - 3009:5050  # host:container
+    networks:
+      sample:
+        aliases:
+          - max-service
 
+  exp-service:
+    build: ./min  # path is relative to docker-compose.yml location
+    hostname: min-service
+    ports:
+      - 3010:5050  # host:container
+    networks:
+      sample:
+        aliases:
+          - min-service
+        
 networks:
   sample:

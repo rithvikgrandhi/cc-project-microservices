@@ -28,9 +28,11 @@ def lcm(n1, n2):
 def exp(n1, n2):
     return requests.request('GET', f'http://exp-service:5050/{n1}/{n2}').json()['result']
 
-def modulus(n1, n2):
-    return requests.request('GET', f'http://mod-service:5050/{n1}/{n2}').json()['result']
+def modulus(n1,n2):
+    return requests.request('Get', f'http://modulus-service:5050/{n1}/{n2}').json()['result']
 
+def greater(n1,n2):
+    return requests.request('Get', f'http://greater-service:5050/{n1}/{n2}').json()['result']
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -56,7 +58,10 @@ def index():
             result = exp(number_1, number_2)
         elif operation == 'modulus':
             result = modulus(number_1, number_2)
-
+        elif operation == 'max':
+            result = max(number_1,number_2)
+        elif operation == 'min':
+            result = min(number_1,number_2)
 
         flash(f'The result of operation {operation} on {number_1} and {number_2} is {result}')
     except TypeError:

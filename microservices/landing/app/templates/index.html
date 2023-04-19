@@ -1,97 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arithmetic Microservices</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f8f8f8;
-    }
-    form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-}
+<html>
+   <body>
+      <h1>Arithmetic Microservices</h1>
+      <form action="" method="POST">
+         <!-- Hint 1: What if input "first" and "second" had default values? -->
+         Enter the First number : <input name="first" type="number" value="0">
+         <br>
+         Enter the Second number: <input name="second" type="number" value="0">
+         <br>
+         Enter Operation: <select id="op" name="operation">
+            <option value="add">Addition</option>
+            <option value="minus">Subtraction</option>
+            <option value="multiply">Multiplication</option>
+            <option value="divide">Division</option>
+            <option value="gcd">gcd</option>
+            <option value="lcm">lcm</option>
+            <option value="exp">exp</option>
+            <option value="modulus">modulus</option>
+            <option value="max">max</option>
+            <option value="min">min</option>
 
-h1 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 30px;
-}
 
-label {
-  display: block;
-  font-size: 18px;
-  margin: 5px 0;
-}
-
-input[type="number"], select {
-  padding: 10px;
-  margin: 5px 0;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  font-size: 16px;
-}
-
-input[type="submit"] {
-  background-color: #3b48f3;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-.message {
-  text-align: center;
-  font-size: 20px;
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-}
-</style>
-</head>
-<body>
-  <h1>Arithmetic Microservices</h1>
-  <form action="" method="POST">
-    <label for="first">Enter the First number:</label>
-    <input name="first" type="number" id="first" value="0">
-
-    <label for="second">Enter the Second number:</label>
-<input name="second" type="number" id="second" value="0">
-
-<label for="op">Enter Operation:</label>
-<select id="op" name="operation">
-  <option value="add">Addition</option>
-  <option value="minus">Subtraction</option>
-  <option value="multiply">Multiplication</option>
-  <option value="divide">Division</option>
-  <option value="gcd">GCD</option>
-  <option value="lcm">LCM</option>
-  <option value="exp">Exponentiation</option>
-  <option value="modulus">Modulus</option>
-</select>
-
-<input type="submit" name="submit_button" value="Calculate">
-</form>
-{% for message in get_flashed_messages() %}
-<div class="message">{{ message }}</div>
-{% endfor %}
-
-</body>
+          </select>
+         <br><br>
+         <input type="submit" name="submit_button">
+      </form>
+        {% for message in get_flashed_messages() %}
+         {{message}}
+      {% endfor %}
+   </body>
 </html>

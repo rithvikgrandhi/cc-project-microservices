@@ -1,3 +1,4 @@
+# Follow Task-0 subtask-1
 FROM python:3.8-alpine
 
 COPY ./app/ app/
@@ -9,4 +10,4 @@ RUN apk add --update \
 	&& pip install -r requirements.txt \
 	&& rm -rf /var/cache/apk/*
 
-CMD ["python", "modulus.py"]
+CMD ["python", "min.py"]
